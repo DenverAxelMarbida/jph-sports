@@ -16,6 +16,7 @@
     .paymaya-color { color: #00a94f; }
     .paypal-color { color: #003087; }
     .method-logo { font-size: 1.1rem; font-weight: 800; }
+    .payment-logo-img { height: 24px; width: auto; vertical-align: middle; margin-left: 4px; }
     .confirm-btn { background: var(--yellow); color: var(--dark); font-weight: 700; font-size: 1.05rem; border: none; border-radius: 10px; width: 100%; padding: 0.85rem; cursor: pointer; transition: background 0.2s; }
     .confirm-btn:hover { background: var(--yellow-light); }
     .success-overlay { display:none; position:fixed; inset:0; background:rgba(20,18,15,0.85); z-index:9999; align-items:center; justify-content:center; }
@@ -116,15 +117,9 @@
         <div class="payment-card" id="method">
           <h6>Payment Method</h6>
           <p class="text-muted small mb-3">Choose how you want to pay</p>
-          <div class="method-option active" data-method="gcash">
-            <span class="method-logo gcash-color">G</span> GCash
-          </div>
-          <div class="method-option" data-method="paymaya">
-            <span class="method-logo paymaya-color">🌿</span> PayMaya
-          </div>
-          <div class="method-option" data-method="paypal">
-            <span class="method-logo paypal-color">P</span> PayPal
-          </div>
+<div class="method-option active" data-method="gcash"><span class="method-logo gcash-color"></span><img src="img/gcash-logo.png" alt="" class="payment-logo-img">GCash</div>
+<div class="method-option" data-method="paymaya"><span class="method-logo paymaya-color"></span><img src="img/paymaya-logo.png" alt="" class="payment-logo-img">PayMaya</div>
+<div class="method-option" data-method="paypal"><span class="method-logo paypal-color"></span><img src="img/paypal-logo.png" alt="" class="payment-logo-img">PayPal</div>
         </div>
 
         <!-- DISCOUNT CODE -->
