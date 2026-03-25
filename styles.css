@@ -13,13 +13,20 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+  height: 100%;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--light);
   color: var(--dark);
   overflow-x: hidden;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ---- UTILITY ---- */
@@ -214,6 +221,7 @@ body {
   background: #1a1917;
   color: rgba(255,255,255,0.4);
   font-size: 0.8rem;
+  margin-top: auto;
 }
 
 /* ========================
@@ -272,7 +280,6 @@ body {
   border-radius: 14px;
   padding: 1.8rem;
   box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  height: 100%;
 }
 .spec-card .spec-icon { color: var(--yellow); font-size: 1.5rem; }
 .spec-table { font-size: 0.86rem; }
@@ -448,7 +455,11 @@ body {
 /* ========================
    ACCOUNT PAGE
 ======================== */
-.account-section { padding-top: calc(var(--nav-height) + 30px); }
+.account-section { 
+  padding-top: calc(var(--nav-height) + 30px); 
+  flex: 1;
+  min-height: calc(100vh - var(--nav-height) - 48px);
+}
 
 .account-tabs {
   display: flex;
