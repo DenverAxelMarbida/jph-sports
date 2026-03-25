@@ -222,10 +222,21 @@
                 <label class="form-label"><i class="bi bi-envelope me-1"></i>Email Address</label>
                 <input type="email" class="form-control" value="demo@jph.com">
               </div>
-              <div class="mb-3">
-                <label class="form-label"><i class="bi bi-telephone me-1"></i>Phone Number</label>
-                <input type="tel" class="form-control" placeholder="+63 9XX XXX XXXX">
+                  <!-- Added phone number field -->
+            <div class="mt-3">
+                <label class="form-label">Phone Number</label>
+                <div class="input-group">
+                  <span class="input-group-text">+63</span>
+                  <input 
+                    type="tel" 
+                    id="regPhone" 
+                    class="form-control" 
+                    placeholder="9XX XXX XXXX"
+                    maxlength="10"
+                  >
               </div>
+            </div>
+
             </div>
             <div class="spec-card mb-3">
               <h6 class="fw-bold mb-3">Change Password</h6>
@@ -348,6 +359,10 @@ function cancelSession(id) {
     card.querySelector('button').disabled = true;
   }
 }
+
+  phoneInput.addEventListener("input", () => {
+    phoneInput.value = phoneInput.value.replace(/[^0-9]/g, "");
+  });
 </script>
 </body>
 </html>
