@@ -1,0 +1,568 @@
+/* ========================
+   JPH Sports Complex CSS
+======================== */
+:root {
+  --dark: #373633;
+  --yellow: #EDB900;
+  --yellow-light: #f5c820;
+  --light: #F5F5F5;
+  --red: #BD2A2A;
+  --green: #15D755;
+  --nav-height: 70px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* ---- UTILITY ---- */
+.text-yellow { color: var(--yellow) !important; }
+.bg-yellow { background-color: var(--yellow) !important; }
+.btn-yellow {
+  background-color: var(--yellow);
+  color: var(--dark);
+  font-weight: 600;
+  border: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-yellow:hover {
+  background-color: var(--yellow-light);
+  color: var(--dark);
+  transform: translateY(-1px);
+}
+.btn-dark-solid {
+  background-color: var(--dark);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-dark-solid:hover {
+  background-color: #1a1917;
+  color: #fff;
+  transform: translateY(-1px);
+}
+.fs-small { font-size: 0.78rem; }
+.bg-dark-section { background-color: var(--dark); }
+
+/* ---- NAVBAR ---- */
+.jph-navbar {
+  background-color: rgba(55, 54, 51, 0.97);
+  backdrop-filter: blur(6px);
+  min-height: var(--nav-height);
+  border-bottom: 1px solid rgba(237,185,0,0.15);
+  transition: box-shadow 0.3s;
+}
+.jph-navbar.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.35); }
+.brand-text { font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: 0.02em; }
+.nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  font-size: 0.93rem;
+  padding: 0.45rem 0.85rem !important;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-link:hover, .nav-link.active, .nav-link:focus {
+  color: var(--yellow) !important;
+  background: rgba(237,185,0,0.08);
+}
+
+/* DROPDOWN */
+.jph-dropdown {
+  background-color: #2c2b28;
+  border: 1px solid rgba(237,185,0,0.18);
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  min-width: 220px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  animation: dropFade 0.18s ease;
+}
+@keyframes dropFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.jph-dropdown .dropdown-item {
+  color: rgba(255,255,255,0.82);
+  font-size: 0.88rem;
+  padding: 0.55rem 1.1rem;
+  transition: background 0.15s, color 0.15s;
+}
+.jph-dropdown .dropdown-item:hover {
+  background: rgba(237,185,0,0.12);
+  color: var(--yellow);
+}
+.dropdown-divider { border-color: rgba(255,255,255,0.1) !important; }
+
+/* ---- HERO ---- */
+.hero-section {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-top: var(--nav-height);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20,18,15,0.62);
+  z-index: 0;
+}
+.hero-logo { width: 90px; }
+.hero-title {
+  font-size: clamp(1.6rem, 4vw, 2.9rem);
+  line-height: 1.2;
+  text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+}
+.hero-subtitle {
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  color: rgba(255,255,255,0.82) !important;
+  max-width: 540px;
+  line-height: 1.7;
+}
+.hero-btn { font-size: 1rem; letter-spacing: 0.03em; }
+
+/* ---- SECTIONS ---- */
+.section-tag {
+  display: inline-block;
+  background: rgba(237,185,0,0.13);
+  color: var(--yellow);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-radius: 20px;
+  padding: 3px 14px;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0;
+}
+
+/* ---- FACILITY CARDS ---- */
+.facility-card {
+  background: #fff;
+  border: 1.5px solid rgba(55,54,51,0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.facility-card:hover { box-shadow: 0 6px 22px rgba(0,0,0,0.1); transform: translateY(-3px); }
+
+/* ---- COURT CARDS ---- */
+.court-card {
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.court-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.16); transform: translateY(-4px); }
+.court-img-wrap { position: relative; overflow: hidden; height: 180px; }
+.court-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.court-card:hover .court-img { transform: scale(1.05); }
+.badge-available {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.badge-deal {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: var(--yellow);
+  color: var(--dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ---- QUICK BOOK BANNER ---- */
+.quick-book-banner {
+  background-color: var(--yellow);
+  color: var(--dark) !important;
+}
+.quick-book-banner h2 { color: var(--dark) !important; }
+
+/* ---- ANNOUNCEMENT CARDS ---- */
+.announcement-card {
+  background: #fff;
+  border-left: 4px solid var(--yellow);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* ---- CONTACT CARD ---- */
+.contact-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(237,185,0,0.15);
+}
+
+/* ---- FOOTER ---- */
+.jph-footer {
+  background: #1a1917;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.8rem;
+}
+
+/* ========================
+   AUTH PAGES (login/register)
+======================== */
+.auth-page {
+  min-height: 100vh;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 16px 40px;
+}
+.auth-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.35);
+}
+.auth-card .logo-wrap { text-align: center; margin-bottom: 1.5rem; }
+.auth-card .logo-wrap img { height: 56px; }
+.auth-card h2 { font-size: 1.2rem; font-weight: 700; color: var(--dark); }
+.form-label { font-size: 0.85rem; font-weight: 500; color: var(--dark); }
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1.5px solid #ddd;
+  font-size: 0.9rem;
+  padding: 0.6rem 0.9rem;
+  transition: border-color 0.2s;
+  font-family: 'Poppins', sans-serif;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 3px rgba(237,185,0,0.15);
+}
+.auth-link { color: var(--yellow); font-weight: 600; text-decoration: none; }
+.auth-link:hover { text-decoration: underline; }
+.error-msg { font-size: 0.78rem; color: var(--red); }
+
+/* ========================
+   VENUE PAGE
+======================== */
+.venue-hero {
+  min-height: 260px;
+  background: linear-gradient(135deg, var(--dark) 0%, #1a1917 100%);
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-height);
+}
+.venue-hero h1 { font-size: clamp(1.6rem, 4vw, 2.5rem); }
+
+.spec-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.8rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  height: 100%;
+}
+.spec-card .spec-icon { color: var(--yellow); font-size: 1.5rem; }
+.spec-table { font-size: 0.86rem; }
+.spec-table td { padding: 0.35rem 0; border: none; }
+.spec-table td:last-child { text-align: right; font-weight: 600; color: var(--dark); }
+.spec-section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 6px; margin-top: 1rem; }
+.badge-tag { font-size: 0.72rem; font-weight: 600; border-radius: 20px; padding: 3px 10px; }
+
+.amenity-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1.5px solid rgba(237,185,0,0.25);
+  border-radius: 30px;
+  padding: 6px 16px;
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+.amenity-dot { width: 10px; height: 10px; background: var(--yellow); border-radius: 50%; flex-shrink: 0; }
+
+.equip-row { display: flex; justify-content: space-between; align-items: center; padding: 0.65rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.88rem; }
+.equip-row:last-child { border-bottom: none; }
+.equip-price { color: var(--yellow); font-weight: 700; }
+
+.event-package-card {
+  background: var(--yellow);
+  border-radius: 16px;
+  padding: 2rem;
+  color: var(--dark);
+}
+.event-package-card .stat-box {
+  background: rgba(255,255,255,0.25);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.event-package-card ul { list-style: none; padding: 0; margin: 0; }
+.event-package-card ul li::before { content: "● "; font-size: 0.7rem; }
+
+/* ========================
+   SCHEDULES PAGE
+======================== */
+.schedules-toolbar {
+  background: #fff;
+  border-bottom: 2px solid var(--yellow);
+  position: sticky;
+  top: var(--nav-height);
+  z-index: 100;
+  padding: 0.75rem 0;
+}
+.date-nav-btn {
+  background: none;
+  border: 1.5px solid var(--yellow);
+  color: var(--yellow);
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.date-nav-btn:hover { background: var(--yellow); color: var(--dark); }
+.date-display { font-weight: 700; font-size: 1rem; color: var(--dark); }
+
+.sport-filter-btn {
+  background: #f0f0f0;
+  border: none;
+  color: var(--dark);
+  border-radius: 20px;
+  padding: 5px 16px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  font-family: 'Poppins', sans-serif;
+}
+.sport-filter-btn.active, .sport-filter-btn:hover {
+  background: var(--yellow);
+  color: var(--dark);
+}
+
+.time-slot-header { font-size: 0.82rem; font-weight: 700; color: #888; margin-top: 1rem; margin-bottom: 0.5rem; }
+
+.slot-card {
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  position: relative;
+}
+.slot-card:hover {
+  border-color: var(--yellow);
+  box-shadow: 0 4px 14px rgba(237,185,0,0.18);
+  transform: translateY(-2px);
+}
+.slot-card.selected {
+  border-color: var(--yellow);
+  background: rgba(237,185,0,0.06);
+}
+.slot-card.occupied {
+  background: #f8f8f8;
+  border-color: #ddd;
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.slot-card .slot-name { font-size: 0.83rem; font-weight: 600; }
+.slot-card .slot-price { font-size: 0.78rem; color: var(--yellow); font-weight: 700; }
+.slot-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  border-radius: 20px;
+  padding: 2px 8px;
+}
+.slot-badge.open { background: var(--green); color: #fff; }
+.slot-badge.occupied { background: #ddd; color: #888; }
+
+.booking-summary-box {
+  background: #fff;
+  border-radius: 12px;
+  border: 1.5px solid rgba(237,185,0,0.3);
+  padding: 1.2rem 1.4rem;
+  position: sticky;
+  top: calc(var(--nav-height) + 90px);
+}
+.booking-summary-box .sum-label { font-size: 0.78rem; color: #888; }
+.booking-summary-box .sum-val { font-size: 0.88rem; font-weight: 600; }
+.booking-summary-box .sum-total { font-size: 1.1rem; font-weight: 800; color: var(--yellow); }
+
+/* ========================
+   PAYMENTS PAGE
+======================== */
+.payments-section { padding-top: calc(var(--nav-height) + 30px); }
+
+.payment-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  margin-bottom: 1.2rem;
+}
+.payment-card h6 { font-weight: 700; font-size: 1rem; color: var(--dark); }
+
+.method-option {
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0.7rem;
+}
+.method-option:hover, .method-option.active { border-color: var(--yellow); background: rgba(237,185,0,0.05); }
+.method-option .method-name { font-weight: 600; font-size: 0.92rem; }
+
+.price-row { display: flex; justify-content: space-between; font-size: 0.88rem; padding: 0.4rem 0; border-bottom: 1px solid #f0f0f0; }
+.price-row:last-child { border-bottom: none; }
+.price-total-row { display: flex; justify-content: space-between; font-size: 1.05rem; font-weight: 800; color: #0066cc; padding-top: 0.6rem; }
+
+.cancellation-box {
+  border: 1.5px solid #f0f0f0;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+.status-active { color: var(--green); font-weight: 700; }
+.status-cancelled { color: var(--red); font-weight: 700; }
+
+/* ========================
+   ACCOUNT PAGE
+======================== */
+.account-section { padding-top: calc(var(--nav-height) + 30px); }
+
+.account-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e8e8e8;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.account-tabs::-webkit-scrollbar { display: none; }
+.account-tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
+  padding: 0.7rem 1.1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.account-tab-btn.active {
+  color: var(--dark);
+  background: var(--yellow);
+  border-radius: 20px;
+  border-bottom-color: transparent;
+}
+
+.session-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.session-info-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 600; }
+.session-info-item i { color: #0066cc; }
+.session-status-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+.badge-confirmed { background: var(--green); color: #fff; }
+.badge-cancelled-tag { background: var(--red); color: #fff; }
+.badge-past { background: #aaa; color: #fff; }
+
+.session-price { color: #0066cc; font-weight: 800; font-size: 1.1rem; }
+
+/* STUDENT VERIFICATION */
+.verification-status-box {
+  border: 1.5px solid #e8e8e8;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1.2rem;
+}
+.upload-box {
+  background: #fafafa;
+  border: 2px dashed var(--yellow);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.upload-box:hover { background: rgba(237,185,0,0.06); }
+
+/* SUPPORT TICKET */
+.tip-box {
+  background: rgba(237,185,0,0.1);
+  border: 1.5px solid rgba(237,185,0,0.3);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  font-size: 0.84rem;
+}
+.tip-box ul { margin: 0; padding-left: 1.2rem; }
+.tip-box li { margin-bottom: 3px; }
+
+/* ========================
+   VENUE IMAGE CAROUSEL
+======================== */
+.venue-img-carousel img {
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 991px) {
+  .jph-dropdown { position: static !important; width: 100%; border: none; border-radius: 0; background: rgba(255,255,255,0.05); box-shadow: none; animation: none; }
+  .jph-dropdown .dropdown-item { color: rgba(255,255,255,0.75); }
+  .nav-link { padding: 0.5rem 1rem !important; }
+  .navbar-collapse { padding: 0.5rem 0 1rem; }
+  .booking-summary-box { position: static; }
+}
+@media (max-width: 575px) {
+  .hero-logo { width: 70px; }
+  .auth-card { padding: 1.8rem 1.2rem; }
+  .session-card { flex-direction: column; align-items: flex-start; }
+  .account-tab-btn { font-size: 0.78rem; padding: 0.6rem 0.8rem; }
+  .spec-card { padding: 1.2rem; }
+}

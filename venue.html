@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Venue – JPH Sports Complex</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark jph-navbar fixed-top" id="mainNav">
+  <div class="container-fluid px-3 px-lg-4">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+      <img src="logo.png" alt="JPH Logo" height="42">
+      <span class="brand-text">JPH <span class="text-yellow">Sports Complex</span></span>
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav align-items-lg-center gap-lg-1">
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link fw-semibold" href="index.html" data-bs-toggle="dropdown">Home</a>
+          <ul class="dropdown-menu jph-dropdown">
+            <li><a class="dropdown-item" href="index.html#facility-status"><i class="bi bi-check-circle me-2 text-yellow"></i>Facility Status List</a></li>
+            <li><a class="dropdown-item" href="index.html#top-deals"><i class="bi bi-fire me-2 text-yellow"></i>Today's Top Deals</a></li>
+            <li><a class="dropdown-item" href="schedules.html"><i class="bi bi-lightning me-2 text-yellow"></i>Quick-Book Button</a></li>
+            <li><a class="dropdown-item" href="index.html#announcements"><i class="bi bi-megaphone me-2 text-yellow"></i>Announcements</a></li>
+            <li><a class="dropdown-item" href="index.html#contact"><i class="bi bi-telephone me-2 text-yellow"></i>Contact &amp; Location</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link fw-semibold active" href="venue.html" data-bs-toggle="dropdown">Venue</a>
+          <ul class="dropdown-menu jph-dropdown">
+            <li><a class="dropdown-item" href="#basketball-volleyball"><i class="bi bi-dribbble me-2 text-yellow"></i>Basketball / Volleyball Details</a></li>
+            <li><a class="dropdown-item" href="#badminton-tennis"><i class="bi bi-activity me-2 text-yellow"></i>Badminton / Tennis Details</a></li>
+            <li><a class="dropdown-item" href="#amenities"><i class="bi bi-bag me-2 text-yellow"></i>Standard Amenities</a></li>
+            <li><a class="dropdown-item" href="#equipment"><i class="bi bi-gear me-2 text-yellow"></i>Equipment Rental</a></li>
+            <li><a class="dropdown-item" href="#event-booking"><i class="bi bi-calendar-event me-2 text-yellow"></i>Event Booking</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link fw-semibold" href="schedules.html" data-bs-toggle="dropdown">Schedules</a>
+          <ul class="dropdown-menu jph-dropdown">
+            <li><a class="dropdown-item" href="schedules.html#time-slots"><i class="bi bi-clock me-2 text-yellow"></i>Hourly Time-Slot</a></li>
+            <li><a class="dropdown-item" href="schedules.html#date-nav"><i class="bi bi-calendar3 me-2 text-yellow"></i>Date Navigator</a></li>
+            <li><a class="dropdown-item" href="schedules.html#sport-filter"><i class="bi bi-funnel me-2 text-yellow"></i>Sport Filter Buttons</a></li>
+            <li><a class="dropdown-item" href="schedules.html#booking-summary"><i class="bi bi-receipt me-2 text-yellow"></i>Booking Summary</a></li>
+            <li><a class="dropdown-item" href="schedules.html#slot-locking"><i class="bi bi-lock me-2 text-yellow"></i>Live Slot Locking</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown mega-dropdown">
+          <a class="nav-link fw-semibold" href="payments.html" data-bs-toggle="dropdown">Payments</a>
+          <ul class="dropdown-menu jph-dropdown">
+            <li><a class="dropdown-item" href="payments.html#method"><i class="bi bi-credit-card me-2 text-yellow"></i>Payment Method Selection</a></li>
+            <li><a class="dropdown-item" href="payments.html#breakdown"><i class="bi bi-list-ol me-2 text-yellow"></i>Price Breakdown</a></li>
+            <li><a class="dropdown-item" href="payments.html#discount"><i class="bi bi-tag me-2 text-yellow"></i>Discount Code</a></li>
+            <li><a class="dropdown-item" href="payments.html#erecipient"><i class="bi bi-envelope-check me-2 text-yellow"></i>E-Recipient</a></li>
+            <li><a class="dropdown-item" href="payments.html#cancellation"><i class="bi bi-x-circle me-2 text-yellow"></i>Cancellation Status</a></li>
+          </ul>
+        </li>
+        <li class="nav-item" id="navLoginBtn"><a class="btn btn-yellow ms-lg-2 px-4" href="login.html">Log in</a></li>
+        <li class="nav-item dropdown mega-dropdown d-none" id="navAccountMenu">
+          <a class="nav-link fw-semibold d-flex align-items-center gap-1" href="#" data-bs-toggle="dropdown"><i class="bi bi-person-circle fs-4 text-yellow"></i></a>
+          <ul class="dropdown-menu jph-dropdown dropdown-menu-end">
+            <li><a class="dropdown-item" href="account.html#upcoming"><i class="bi bi-calendar-check me-2 text-yellow"></i>Upcoming Sessions</a></li>
+            <li><a class="dropdown-item" href="account.html#past"><i class="bi bi-clock-history me-2 text-yellow"></i>Past Activity Log</a></li>
+            <li><a class="dropdown-item" href="account.html#student"><i class="bi bi-mortarboard me-2 text-yellow"></i>Student Verification</a></li>
+            <li><a class="dropdown-item" href="account.html#profile"><i class="bi bi-person-gear me-2 text-yellow"></i>Profile Settings</a></li>
+            <li><a class="dropdown-item" href="account.html#support"><i class="bi bi-headset me-2 text-yellow"></i>Support Ticket Form</a></li>
+            <li><hr class="dropdown-divider border-secondary"></li>
+            <li><a class="dropdown-item text-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right me-2"></i>Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- VENUE HERO -->
+<section class="venue-hero text-white">
+  <div class="container">
+    <div class="pt-2">
+      <h1 class="fw-bold mt-1 mb-2" style="color: var(--yellow);">Venue Specifications</h1>
+      <p class="mb-0">Everything you need to know about our facilities</p>
+    </div>
+  </div>
+</section>
+
+<!-- BASKETBALL & VOLLEYBALL -->
+<section class="py-5 bg-light" id="basketball-volleyball">
+  <div class="container">
+    <div class="section-header mb-4">
+      <span class="section-tag">Court 1 &amp; 2</span>
+      <h2 class="section-title">Basketball &amp; Volleyball</h2>
+    </div>
+    <div class="row g-4 align-items-stretch">
+      <div class="col-12 col-lg-6">
+        <div class="spec-card h-100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-trophy-fill spec-icon"></i>
+            <span class="fw-bold fs-5">Basketball &amp; Volleyball</span>
+          </div>
+          <div class="spec-section-label">Court Dimensions</div>
+          <table class="spec-table w-100">
+            <tr><td>Basketball</td><td>28m × 15m</td></tr>
+            <tr><td>Volleyball</td><td>18m × 9m</td></tr>
+          </table>
+          <div class="spec-section-label">Specifications</div>
+          <table class="spec-table w-100">
+            <tr><td>Basketball Rim Height</td><td>10 feet (3.05m)</td></tr>
+            <tr><td>Volleyball Rim Height</td><td>2.43m</td></tr>
+            <tr><td>Flooring Type</td><td>Premium Rubberized</td></tr>
+          </table>
+          <div class="spec-section-label">Hourly Rate</div>
+          <div class="text-yellow fw-bold fs-5">₱280 – 400 <span class="text-muted fw-normal fs-6">per hour</span></div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div id="bballCarousel" class="carousel slide h-100 rounded-3 overflow-hidden" data-bs-ride="carousel">
+          <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100">
+              <img src="basketball.jpg" class="d-block w-100 h-100" style="object-fit:cover;min-height:260px;" alt="Basketball Court">
+            </div>
+            <div class="carousel-item h-100">
+              <img src="volleyball.jpg" class="d-block w-100 h-100" style="object-fit:cover;min-height:260px;" alt="Volleyball Court">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#bballCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#bballCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#bballCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#bballCarousel" data-bs-slide-to="1"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BADMINTON & TENNIS -->
+<section class="py-5 bg-dark-section" id="badminton-tennis">
+  <div class="container">
+    <div class="section-header mb-4">
+      <span class="section-tag">Court 3 &amp; 4</span>
+      <h2 class="section-title text-white">Badminton &amp; Tennis</h2>
+    </div>
+    <div class="row g-4 align-items-stretch">
+      <div class="col-12 col-lg-6 order-lg-2">
+        <div class="spec-card h-100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-trophy-fill spec-icon"></i>
+            <span class="fw-bold fs-5">Badminton &amp; Tennis</span>
+          </div>
+          <div class="spec-section-label">Court Dimensions</div>
+          <table class="spec-table w-100">
+            <tr><td>Badminton</td><td>13.4m × 6.1m</td></tr>
+            <tr><td>Tennis</td><td>23.77m × 10.97m</td></tr>
+          </table>
+          <div class="spec-section-label">Lighting &amp; Requirements</div>
+          <div class="d-flex flex-wrap gap-2 mb-2">
+            <span class="badge-tag bg-success text-white">Indoor</span>
+            <span class="badge-tag bg-warning text-dark">Required</span>
+            <span class="badge-tag bg-info text-dark">Climate</span>
+          </div>
+          <ul class="list-unstyled text-muted small mb-2">
+            <li><i class="bi bi-check2 text-yellow me-1"></i>Professional LED lighting with no glare</li>
+            <li><i class="bi bi-check2 text-yellow me-1"></i>Non-marking indoor court shoes mandatory</li>
+            <li><i class="bi bi-check2 text-yellow me-1"></i>Air-conditioned for optimal play</li>
+          </ul>
+          <div class="spec-section-label">Hourly Rate</div>
+          <div class="text-yellow fw-bold fs-5">₱300 – 500 <span class="text-muted fw-normal fs-6">per hour</span></div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 order-lg-1">
+        <div id="btCarousel" class="carousel slide h-100 rounded-3 overflow-hidden" data-bs-ride="carousel">
+          <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100">
+              <img src="badminton.jpg" class="d-block w-100 h-100" style="object-fit:cover;min-height:260px;" alt="Badminton Court">
+            </div>
+            <div class="carousel-item h-100">
+              <img src="tennis.jpg" class="d-block w-100 h-100" style="object-fit:cover;min-height:260px;" alt="Tennis Court">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#btCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#btCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#btCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#btCarousel" data-bs-slide-to="1"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES & EQUIPMENT -->
+<section class="py-5 bg-light" id="amenities">
+  <div class="container">
+    <div class="row g-4">
+      <!-- AMENITIES -->
+      <div class="col-12 col-lg-6">
+        <div class="spec-card h-100">
+          <div class="d-flex align-items-center gap-2 mb-1">
+            <i class="bi bi-bag-fill spec-icon"></i>
+            <h5 class="mb-0 fw-bold">Standard Amenities</h5>
+          </div>
+          <p class="text-muted small mb-3">Free-to-use facilities included with every booking</p>
+          <div class="row g-2">
+            <div class="col-6"><div class="amenity-chip"><span class="amenity-dot"></span>Free Water Stations</div></div>
+            <div class="col-6"><div class="amenity-chip"><span class="amenity-dot"></span>Comfortable Benches</div></div>
+            <div class="col-6"><div class="amenity-chip"><span class="amenity-dot"></span>Clean Shower Facilities</div></div>
+            <div class="col-6"><div class="amenity-chip"><span class="amenity-dot"></span>Lockers</div></div>
+            <div class="col-6"><div class="amenity-chip"><span class="amenity-dot"></span>First Aid Kit</div></div>
+            <div class="col-6"><div class="amenity-chip"><span class="amenity-dot"></span>Parking Space</div></div>
+            <div class="col-6"><div class="amenity-chip"><span class="amenity-dot"></span>Wi-Fi Access</div></div>
+            <div class="col-6"><div class="amenity-chip"><span class="amenity-dot"></span>Air Conditioning</div></div>
+          </div>
+        </div>
+      </div>
+      <!-- EQUIPMENT RENTAL -->
+      <div class="col-12 col-lg-6" id="equipment">
+        <div class="spec-card h-100">
+          <div class="d-flex align-items-center gap-2 mb-1">
+            <i class="bi bi-gear-fill spec-icon"></i>
+            <h5 class="mb-0 fw-bold">Equipment Rental Pricing</h5>
+          </div>
+          <p class="text-muted small mb-3">For those who don't have their own gear</p>
+          <div class="equip-row"><span>Basketball</span><span class="equip-price">₱50 <small class="text-muted fw-normal">/ hr</small></span></div>
+          <div class="equip-row"><span>Badminton Racket</span><span class="equip-price">₱100 <small class="text-muted fw-normal">/ hr</small></span></div>
+          <div class="equip-row"><span>Tennis Racket</span><span class="equip-price">₱150 <small class="text-muted fw-normal">/ hr</small></span></div>
+          <div class="equip-row"><span>Volleyball</span><span class="equip-price">₱50 <small class="text-muted fw-normal">/ hr</small></span></div>
+          <div class="equip-row"><span>Shuttlecock (Tube)</span><span class="equip-price">₱200 <small class="text-muted fw-normal">/ tube</small></span></div>
+          <div class="equip-row"><span>Tennis Ball (Can)</span><span class="equip-price">₱250 <small class="text-muted fw-normal">/ can</small></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT BOOKING -->
+<section class="py-5 bg-dark-section" id="event-booking">
+  <div class="container">
+    <div class="section-header text-center mb-4">
+      <span class="section-tag">Special Events</span>
+      <h2 class="section-title text-white">Event Booking</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-lg-8">
+        <div class="event-package-card">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-calendar-event-fill fs-4"></i>
+            <h5 class="mb-0 fw-bold">Whole-Day Tournament Package</h5>
+          </div>
+          <p class="small mb-3">Perfect for organizing tournaments, corporate events, or team-building activities</p>
+          <div class="row g-3 mb-3">
+            <div class="col-4">
+              <div class="stat-box text-center">
+                <i class="bi bi-people-fill mb-1"></i>
+                <div class="small fw-semibold">Capacity</div>
+                <div class="fw-bold">Up to 100 people</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-box text-center">
+                <i class="bi bi-clock-fill mb-1"></i>
+                <div class="small fw-semibold">Duration</div>
+                <div class="fw-bold">6 AM – 10 PM</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-box text-center">
+                <i class="bi bi-cash-stack mb-1"></i>
+                <div class="small fw-semibold">Price</div>
+                <div class="fw-bold">₱8,000+</div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <strong class="small">Included in package:</strong>
+            <ul class="mt-2">
+              <li>Exclusive use of all courts for the day</li>
+              <li>Professional referee services</li>
+              <li>Trophy and medals for winners</li>
+              <li>Free equipment rental</li>
+              <li>Complimentary water and refreshments</li>
+              <li>Event coordination support</li>
+            </ul>
+          </div>
+          <a href="schedules.html" class="btn btn-dark-solid w-100 py-2">Inquire About Event Booking</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="jph-footer py-3 text-center">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div class="small">
+        <i class="bi bi-telephone-fill text-yellow me-1"></i> 09389382916 &nbsp;|&nbsp;
+        <i class="bi bi-geo-alt-fill text-yellow me-1"></i> 160 Peras Street, Cainta, Rizal
+      </div>
+      <div class="small">&copy; 2026 JPH Sports Complex. <span class="fst-italic">Educational purposes only.</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="auth.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
